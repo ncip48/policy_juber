@@ -10,6 +10,9 @@ class PolicyController extends Controller
     public function index($username = "dev")
     {
         $account = MitraModel::where('username', $username)->first();
+        if (!$account) {
+            return abort(404);
+        }
 
         return view('policy', compact('account'));
     }
