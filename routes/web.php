@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['domain' => '{account}.policy.dotech.cfd'], function () {
     Route::get('/', [PolicyController::class, 'index']);
-    Route::resource('admin', AdminController::class);
+    // Route::resource('admin', AdminController::class);
 });
 
 Route::group(['domain' => 'admin.policy.dotech.cfd'], function () {
