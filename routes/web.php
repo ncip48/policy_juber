@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['domain' => '{account}.dns.dev'], function () {
+Route::group(['domain' => '{account}.policy.dotech.cfd'], function () {
     Route::get('/', function ($account) {
         return $account;
     });
