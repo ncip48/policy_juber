@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return "Hi~";
+});
+
 Route::group(['domain' => '{account}.policy.dotech.cfd'], function () {
-    Route::get('/', function ($account) {
+    Route::get('/me', function ($account) {
         return $account;
     });
 });
