@@ -47,7 +47,7 @@
                                 <td>{{ $mitra->mitra_nama_perusahaan }}</td>
                                 <td>{{ $mitra->mitra_nama_apk }}</td>
                                 <td>
-                                    <a href="{{ $mitra->username }}"
+                                    <a href="https://{{ $mitra->username }}.policy.dotech.cfd"
                                         target="_blank">{{ $mitra->username }}.policy.dotech.cfd
                                     </a>
                                 </td>
