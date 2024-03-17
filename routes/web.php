@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['domain' => '{account}.dns.dev'], function () {
+    Route::get('/', function ($account) {
+        return $account;
+    });
 });
