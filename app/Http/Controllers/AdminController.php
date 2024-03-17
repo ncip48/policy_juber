@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MitraModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -32,7 +33,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         MitraModel::insert([
-            'username' => $request->username,
+            'username' => Str::lower($request->username),
             'mitra_nama_perusahaan' => $request->mitra_nama_perusahaan,
             'mitra_nama_apk' => $request->mitra_nama_apk
         ]);
@@ -65,7 +66,7 @@ class AdminController extends Controller
     public function update(Request $request, string $id)
     {
         MitraModel::where('mitra_id', $id,)->update([
-            'username' => $request->username,
+            'username' => Str::lower($request->username),
             'mitra_nama_perusahaan' => $request->mitra_nama_perusahaan,
             'mitra_nama_apk' => $request->mitra_nama_apk
         ]);
