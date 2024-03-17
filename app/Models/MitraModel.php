@@ -9,10 +9,11 @@ class MitraModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'd_mitra';
+    protected $table = 'mitra';
     protected $primaryKey = 'mitra_id';
 
     protected $fillable = [
+        'username',
         'mitra_nama_perusahaan',
         'mitra_nama_apk'
     ];

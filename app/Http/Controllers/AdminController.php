@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MitraModel;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -11,7 +12,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $mitras = MitraModel::all();
+        return view('admin/mitra/index', compact('mitras'));
     }
 
     /**
@@ -19,7 +21,9 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $url = route('admin.store');
+
+        return view('admin.mitra.action', compact('url'));
     }
 
     /**
@@ -27,7 +31,13 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MitraModel::insert([
+            'username' => $request->username,
+            'mitra_nama_perusahaan' => $request->mitra_nama_perusahaan,
+            'mitra_nama_apk' => $request->mitra_nama_apk
+        ]);
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -43,7 +53,10 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = MitraModel::where('mitra_id', $id)->first();
+        $url = route('admin.update', $data);
+
+        return view('admin.mitra.action', compact('url', 'data'));
     }
 
     /**
@@ -51,7 +64,13 @@ class AdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        MitraModel::where('mitra_id', $id,)->update([
+            'username' => $request->username,
+            'mitra_nama_perusahaan' => $request->mitra_nama_perusahaan,
+            'mitra_nama_apk' => $request->mitra_nama_apk
+        ]);
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -59,6 +78,8 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        MitraModel::where('mitra_id', $id)->delete();
+
+        return redirect()->route('admin.index');
     }
 }
