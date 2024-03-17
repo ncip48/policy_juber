@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class PolicyController extends Controller
 {
-    public function index($username)
+    public function index($username = "dev")
     {
         $account = MitraModel::where('username', $username)->first();
+
         return view('policy', compact('account'));
     }
 }
