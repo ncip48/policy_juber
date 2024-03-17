@@ -22,7 +22,7 @@ Route::group(['domain' => '{account}.policy.dotech.cfd'], function () {
     // Route::resource('admin', AdminController::class);
 });
 
-Route::group(['domain' => 'policy.dotech.cfd/admin'], function () {
+Route::group(['domain' => 'policy.dotech.cfd'], function () {
     Route::get('/', function () {
         return "Hi~";
     });
