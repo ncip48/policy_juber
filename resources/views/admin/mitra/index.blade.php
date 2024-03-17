@@ -35,6 +35,7 @@
                             <th>Username</th>
                             <th>Nama Perusahaan</th>
                             <th>Nama Aplikasi</th>
+                            <th>Link Policy</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -45,6 +46,11 @@
                                 <td>{{ $mitra->username }}</td>
                                 <td>{{ $mitra->mitra_nama_perusahaan }}</td>
                                 <td>{{ $mitra->mitra_nama_apk }}</td>
+                                <td>
+                                    <a href="{{ $mitra->username }}"
+                                        target="_blank">{{ $mitra->username }}.policy.dotech.cfd
+                                    </a>
+                                </td>
                                 <td>
                                     <a href="{{ route('admin.edit', $mitra) }}" class="btn btn-sm btn-warning">Edit</a>
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"
