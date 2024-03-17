@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PolicyController extends Controller
 {
-    public function index($username)
+    public function index($username = '')
     {
         return view('policy');
     }
