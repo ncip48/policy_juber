@@ -14,7 +14,8 @@ class AdminController extends Controller
     public function index()
     {
         $mitras = MitraModel::all();
-        return view('admin/mitra/index', compact('mitras'));
+        $subdomain = env('APP_SUBDOMAIN');
+        return view('admin/mitra/index', compact('mitras', 'subdomain'));
     }
 
     /**
