@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PolicyController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PolicyController::class, 'index']);
+Route::get('/admin', AdminController::class);
 
 Route::group(['domain' => '{account}.policy.dotech.cfd'], function () {
     Route::get('/', [PolicyController::class, 'index']);
