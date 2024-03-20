@@ -16,4 +16,9 @@ class PolicyController extends Controller
 
         return view('policy', compact('account'));
     }
+
+    public function tnc()
+    {
+        return view('tnc');
+    }
 }

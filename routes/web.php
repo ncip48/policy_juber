@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [PolicyController::class, 'index']);
+Route::get('/', [PolicyController::class, 'tnc']);
 
 Route::group(['domain' => '{account}.policy.dotech.cfd'], function () {
     Route::get('/', [PolicyController::class, 'index']);
@@ -26,6 +26,10 @@ Route::group(['domain' => '{account}.policy.berkah-ts.my.id'], function () {
 });
 
 Route::group(['domain' => '{account}.policy.berkah-ts.tech'], function () {
+    Route::get('/', [PolicyController::class, 'index']);
+});
+
+Route::group(['domain' => 'tnc-nonaktif.policy.berkah-ts.tech'], function () {
     Route::get('/', [PolicyController::class, 'index']);
 });
 
