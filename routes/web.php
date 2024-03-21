@@ -29,7 +29,7 @@ Route::group(['domain' => '{account}.policy.berkah-ts.tech'], function () {
     Route::get('/', [PolicyController::class, 'index']);
 });
 
-Route::group(['domain' => 'tnc-nonaktif.policy.berkah-ts.tech'], function () {
+Route::group(['domain' => 'tnc-nonaktif.berkah-ts.tech'], function () {
     Route::get('/', [PolicyController::class, 'tnc']);
 });
 
